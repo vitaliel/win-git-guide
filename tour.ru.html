@@ -249,13 +249,11 @@ int main(int argc, char **argv)
 
         <h2 id="history">Просмотр истории</h2>
 
-        <p>The <span class="tt">main.c</span> file is starting to get a
-        bit big, so I decided to move the user prompting portion of the
-        code into its own function.  While I was at it, I decided to
-        move the function into a separate file. The
-        repository now contains the files <span
-            class="tt">main.c</span>, <span class="tt">askname.c</span>,
-        and <span class="tt">askname.h</span>.</p>
+        <p>Файл <span class="tt">main.c</span> становится немного большим,
+        поэтому я решил вынести код, спрашивающий имя пользователя в отдельную
+        функцию. Пока я это делал, я решил вынести функцию в отдельный файл.
+        Хранилище теперь содержит файлы <span class="tt">main.c</span>, <span
+        class="tt"> askname.c</span>, и <span class="tt">askname.h</span>.</p>
 
         <pre>
 /* main.c */
@@ -297,37 +295,36 @@ void askname(char *first, char *last);
 
         <p><img src="images/23.png" /></p>
 
-        <p>The history of the repository can be viewed and searched by
-        choosing <i>Repository &rarr; Visualize All Branch History</i>.
-        In the next screenshot, I am trying to find which commit added
-        the <span class="tt">last</span> variable by searching for all
-        commits which added or removed the word <em>last</em>. Commits
-        which match the search are bolded, making it quick and easy to
-        spot the desired commit.</p>
+        <p>История хранилища может быть просмотрена и изучена выбрав <i>
+        Repository &rarr; Visualize All Branch History</i>. На следующем
+        скриншоте я пытаюсь найти в какой фиксации была добавлена <span
+        class="tt">last</span> переменная, ищя все фиксации в которых было
+        добавлено или убрано слово <em>last</em>. Фиксации, которые подходят
+        под условия поиска отмечены жирным шрифтом, что бы быстро и легко
+        обнаружить нужную фиксацию.</p>
 
         <p><img src="images/27.png" /></p>
 
-        <p>A few days later, someone looks through our code and sees
-        that the <span class="tt">gets</span> function could cause a
-        buffer overflow.  Being the type to point fingers, this person
-        decides to run a git blame to see who last modified this line of
-        code. The problem is that Bob is the one who committed the line,
-        but I was the one who last touched it when I moved the line into
-        a different file.  Obviously, I am not to blame (of course). Is
-        git smart enough to figure this out? Yes, it is.</p>
+        <p>Через пару дней, кто-то просматривая наш код увидел что <span
+        class="tt">gets</span> функция может вызвать переполнение буффера.
+        Будучи любителем показывать пальцем, этот человек решает запустить git
+        blame что бы увидеть кто последний раз редактировал эту линию кода.
+        Проблема в том что Боб, тот кто зафиксировал эту линию в хранилище, а
+        я последний кто трогал её когда я переместил строку в другой файл.
+        Очевидно, я не виноват (конечно же). Но так ли умён git что бы
+        обнаружить это? Да, это так.</p>
 
-        <p>To run a blame, select <i>Repository &rarr; Browse master's
-            Files</i>. From the tree that pops up, double click on the
-        file with the line in question which in this case is <span
-            class="tt">askname.c</span>.
-        Hovering the mouse over the line in question shows a tooltip
-        message that tells us all we need to know.</p>
+        <p>Что бы запустить blame, выберете <i>Repository &rarr; Browse
+        master's Files</i>. Из дерева которое появится дважды щёлкните на файле
+        с интересующей строкой, который в данном случае <span class="tt">
+        askname.c</span>. Наведённая мышка на интересующую линию показывает нам
+        подсказку, которая говорит нам всё что нам надо знать.</p>
 
         <p><img src="images/24.png" /></p>
 
-        <p>Here we can see that the line was last modified by Bob in
-        commit <span class="tt">f6c0</span>, and then I moved it to its
-        new location in commit <span class="tt">b312</span>.
+        <p>Здесь мы можем видить что эта линия была зафиксирована Бобом в
+        фиксации <span class="tt">f6c0</span>, а затем я её переместил в её
+        новое месторасположение в фиксации <span class="tt">b312</span>.
 
         <h2 id="pushing">Заталкивание на удалённый сервер</h2>
 
