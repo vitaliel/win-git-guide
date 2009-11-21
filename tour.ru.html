@@ -96,11 +96,11 @@
         пользователя и email, пока что. Если у вас есть любимый шрифт, вы
         можете выставить его сейчас, так же.</p>
 
-        <h2 id="committing">Фиксация изменений</h2>
+        <h2 id="committing">Фиксация изменений (commiting)</h2>
 
-        <p>Now that the repository has been created, it is time to
-        create something to commit. For this example, I created a file
-        called <span class="tt">main.c</span> with the following content:
+        <p>Теперь, когда хранилище было создато, пора создать что нибудь
+        для фиксации. Для этого примера я создал файл <span class="tt">main.c
+        </span> со следующим содержимым:
 
         <pre>
 #include &lt;stdio.h&gt;
@@ -112,24 +112,23 @@ int main(int argc, char **argv)
 }
 </pre>
 
-        <p>Clicking the <em>Rescan</em> button in the git gui will cause
-        it to search out new, modified, and deleted files in the
-        directory. In the next screenshot, git gui has found
-        our new file (amazing, I know).</p>
+        <p>Щелчёк на кнопку <em>Rescan</em> в git gui заставит его искать
+        новые, измененные и удалённые файлы в директории. На следующем
+        скриншоте git gui нашёл новый файл (удивительно, я знаю).</p>
 
         <p><img src="images/09.png" /></p>
 
-        <p>To add the file for committing, click the icon to the left of
-        the filename. The file will be moved from the <em>Unstaged
-            Changes</em> pane to the <em>Staged Changes</em> pane. Now
-        we can add a commit message and commit the change with the
-        <em>Commit</em> button.</p>
+        <p>Что бы добавить этот файл в фиксацию, щёлкните на иконке слева от
+        имени файла. Файл будет перемещён с <em>Unstaged Changes</em> панели на
+        <em>Staged Changes</em> панель. Теперь мы можем добавить сообщение
+        фиксации (commit message) и зафиксировать изменения <em>Commit</em>
+        кнопкой.</p>
 
         <p><img src="images/10.png" /></p>
 
-        <p>Saying hello to the world is all well and good, but I would
-        like my program to be more personal. Let's have it say hello to
-        the user. Here's my code for that:</p>
+        <p>Говорить 'hello world' это конечно хорошо, но я хочу что бы моя
+        программа была более персонализирована. Давайте скажем 'hello'
+        пользователю. Вот как будет выглядеть код:</p>
 
         <pre>
 #include &lt;stdio.h&gt;
@@ -149,21 +148,22 @@ int main(int argc, char **argv)
 }
 </pre>
 
-        <p>I had some trouble figuring out why a newline was printed
-        after the user's name, so I added a debugging line to help me
-        track it down. I would like to commit this patch without the
-        debug line, but I want to keep the line in my working copy to
-        continue debugging. With git gui, this is no problem. First,
-        click <em>Rescan</em> to scan for the modified file. Next,
-        click the icon to the left of the filename to stage all
-        modifications for commit. Then, right click on the debug
-        line and chose <em>Unstage Line From Commit</em>.</p>
+        <p>У меня были пробелемы с тем что новая линия печаталась после имени
+        пользователя, поэтому я добавил отладочную линию кода, что бы помочь
+        себе найти причину. Я бы хотел зафиксировать изменение без этой
+        отладочной линии, но я хочу сохранить эту линию в моей рабочей копии
+        что бы продолжить отладку. С git gui это не проблема. Сначала щёлкните
+        <em>Rescan</em> для поиска изменений. Далее щёлкните на иконке слева от
+        файла что бы подготовить (stage) изменения к фиксации. Затем правый
+        щелчёк на отладочной линии и выберите <em>Unstage Line From Commit
+        </em>.</p>
 
         <p><img src="images/11.png" /></p>
 
-        <p>Now, the debug line has been unstaged, while the rest of the
-        changes have been staged. From here, it is just a matter of
-        filling in the commit message and clicking <em>Commit</em>.</p>
+        <p>Теперь отладочная линия не была подготовлена (unstaged) к фиксации,
+        в то время как остальные изменения были. Осталось только заполнить
+        сообщение фиксации и зафиксировать изменения щёлкнув по <em>Commit
+        </em>.</p>
 
         <p><img src="images/12.png" /></p>
 
