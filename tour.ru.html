@@ -167,23 +167,22 @@ int main(int argc, char **argv)
 
         <p><img src="images/12.png" /></p>
 
-        <h2 id="branching">Ветвление</h2>
+        <h2 id="branching">Ветвление (branching)</h2>
 
-        <p>Now let's say that we want to start adding new features for
-        our next big version of the program. But, we also want to keep a
-        stable, maintenance version of the program to fix bugs on. To do
-        this, we will create a branch for our new development.  To
-        create a new branch in git gui, choose <i>Branch &rarr;
-            Create</i>. The big feature that I would like to add is to
-        ask the user for their last name, so I am calling this branch
-        <span class="tt">lastname</span>. The default options in the
-        Create Branch dialog are all fine, so just enter the name and
-        click <em>Create</em>.</p>
+        <p>Теперь, давайте предположим что мы хотим начать добавлять новые
+        возможности в нашу следующую большую версию программы. Но мы так же
+        хотим сохранить стабильную версию в которой исправлять ошибки. Что бы
+        сделать это мы создадим ветку (branch) для наших новый разработок. Что
+        бы создать новую ветку в git gui выберете <i>Branch &rarr; Create</i>.
+        Большая возможность какую я хочу добавить это возможность спросить
+        пользователя его фамилию, поэтому я назову ветку <span class="tt">
+        lastname</span>. Опции по умолчанию подходят без изменений, так что
+        просто введите имя и щёлкните <em>Create</em>.</p>
 
         <p><img src="images/14.png" /></p>
 
-        <p>Now that I am on the <span class="tt">lastname</span> branch,
-        I can make my new modifications:</p>
+        <p>Теперь когда я в <span class="tt">lastname</span> ветке, я могу
+        делать мои новые модификации:</p>
 
         <pre>
 #include &lt;stdio.h&gt;
@@ -205,26 +204,25 @@ int main(int argc, char **argv)
 }
 </pre>
 
-        <p>And then I can commit the change. Note here that I am
-        committing using a different name. This is to show off something
-        later. Normally you would always use the same name when
-        committing.</p>
+        <p>Теперь я могу зафиксировать изменения. Заметте что я фиксирую
+        изменения используя другое имя. Мы рассмотрим это позже. Обычно вы
+        всегда будете использовать одно и тоже имя для фиксаций.</p>
 
         <p><img src="images/15.png" /></p>
 
-        <p>Meanwhile, a user informs us that not displaying a comma when
-        directly addressing someone is a serious bug. In order to make
-        this bug fix on our stable branch, we must first switch back to
-        it. This is done using <i>Branch &rarr; Checkout</i>.
+        <p>Между тем, пользователь проинформировал нас что не показ запятой
+        после прямого обращения к кому-то это серьёзная ошибка. Что бы
+        исправить её в нашей стабильной ветке, вы сначала должны переключится
+        назад на неё. Это достигается используя <i>Branch &rarr; Checkout</i>.
 
         <p><img src="images/16.png" /></p>
 
-        <p>Now we can fix our major bug.</p>
+        <p>Теперь мы можем исправить нашу большую ошибку.</p>
 
         <p><img src="images/17.png" /></p>
 
-        <p>If we choose <i>Repository &rarr; Visualize All Branch
-            History</i>, we can see how our history is shaping up.</p>
+        <p>Если мы выберем <i>Repository &rarr; Visualize All Branch
+            History</i>, мы увидим как складывается наша история.</p>
 
         <p><img src="images/18.png" /></p>
 
