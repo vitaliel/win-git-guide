@@ -326,79 +326,78 @@ void askname(char *first, char *last);
         фиксации <span class="tt">f6c0</span>, а затем я её переместил в её
         новое месторасположение в фиксации <span class="tt">b312</span>.
 
-        <h2 id="pushing">Заталкивание на удалённый сервер</h2>
+        <h2 id="pushing">Публикация изменений (pushing) на удалённом сервере</h2>
 
-        <p>Before pushing to a remote server, you must first create a
-        SSH public and private key pair. By using SSH, you will be able
-        to securely authenticate to the server that you are who you say
-        you are. Creating the key pair is a simple process. Begin by
-        running the <span class="tt">puttygen.exe</span> program
-        downloaded earlier.  Next, click the <em>Generate</em> button to
-        generate the keys.  After processing for a few seconds, click
-        the <em>Save private key</em> button to save your new private
-        key. Copy the public key to the clipboard in preparation for the
-        next step. I would recommend not clicking the <em>Save public
-            key</em> button because the saved file is in a non-standard
-        format; trying to use it with other software might be
-        problematic.</p>
+        <p>Прежде чем публиковать изменения на удалённом сервере, вам надо
+        сначала создать пару SSH ключей, публичный и приватный. Используя
+        SSH вы сможете безопастно аутентифицироваться на сервере что вы это тот,
+        за кого вы себя выдаёте. Создание пары ключей простой процесс. Начните
+        с запуска программы <span class="tt">puttygen.exe</span>, скачанной ранее.
+        Далее щёлкните кнопку <em>Generate</em> для генерации ключей. После
+        обработки в течение нескольких секунд щёлкните <em>Save private key</em>
+        кнопку, что бы сохранить ваш новый приватный ключ. Скопируйте публичный
+        ключ в буфер обмена подготавливаясь к следующему шагу. Я рекомендую не
+        нажимать <em>Save public key</em> кнопку, потому что файл сохраняется
+        в нестандартном формате; попытки использовать его с другими программами
+        могут вызвать проблемы.</p>
 
         <p><img src="images/32.png" /></p>
 
-        <p>Now that the keys are generated, the remote servers need to
-        know about it. If you would like to use <a
-            href="http://github.com/">github</a> to host your code, just
-        go to your account page and paste in the public key.</p>
+        <p>Теперь, когда ключи сгенерированы, удалённый сервер должен знать про
+        них. Если вы захотите использовать <a href="http://github.com/">github
+        </a> что бы держать свой код, откройте страницу учётной записи и
+        вставьте свой публичный ключ.</p>
 
         <p><img src="images/33.png" /></p>
 
-        <p>Now github has our public key, but we do not yet have
-        github's. To remedy this, launch <span
-            class="tt">putty.exe</span>, connect to <span
-            class="tt">github.com</span>, and click <em>Yes</em> to
-        accept github's public key. You can safely close the login
-        window that opens up after accepting the key.
+        <p>Теперь github получил наш публичный ключ, но у нас досихпор нет
+        ключа github-а. Что бы исправить это, запустите <span class="tt">
+        putty.exe</span>, присоеденитесь к <span class="tt">github.com</span>,
+        и нажмите <em>Yes</em>, что бы принять публичный ключ github-a. Вы
+        можете спокойно закрыть окно, которое откроется после принятия ключа.
+        </p>
 
         <p><img src="images/34.png" /></p>
 
         <p><img src="images/35.png" /></p>
 
-        <p>We need our private key to be loaded up to use with our
-        public key, so launch <span class="tt">pageant.exe</span>. This
-        program will create an icon in your system tray. Double clicking
-        on the icon will open up a window into which the private key can
-        be added. Once the private key is added, the agent will sit in
-        the background and provide authentication when needed.</p>
+        <p>Нам нужно что бы наш приватный ключ был загружен для использования с
+        нашим публичным ключём, так что запустите <span class="tt">pageant.exe
+        </span>. Эта программа создаст иконку в вашем системном лотке. Двойной
+        щелчёк на иконке откроет окно в которое можно будет вставить приватный
+        ключ. Когда приватный ключ будет добавлен, агент будет на фоне
+        предоставлять аутентификацию когда надо.</p>
 
         <p><img src="images/36.png" /></p>
 
-        <p>Now that our client and server can authenticate each other,
-        it is time to push! <i>Remote &rarr; Push</i> will open up
-        the push dialog. Typing in the commit address for the project
-        and clicking <em>Push</em> will send the changes on their way.</p>
+        <p>Теперь когда наш клиент и сервер могут аутентифицировать друг-друга,
+        пришло время публиковать! <i>Remote &rarr; Push</i> откроет диалог
+        публикации. Наберите адрес публикации проекта и щёлкните <em>Push</em>,
+        это вышлёт изменения.</p>
 
         <p><img src="images/37.png" /></p>
 
         <p><img src="images/38.png" /></p>
 
-        <p>Of course, typing in the remote url would become quite
-        annoying if we had to do it with every push. Instead, git allows
-        us to alias the long urls using remotes. Git gui currently does
-        not have a way to add a remote, so the command line must be
-        used. Right click on the repository folder and choose <i>Git Bash Here</i>.
-        In the prompt, enter the following command:</p>
+        <p>Конечно, набирание каждый раз адреса может стать довольно надоедливым,
+        если нам придётся делать это постоянно, при каждой публикации. Вместо
+        этого git позволяет нам ассоциировать длинные адреса используя remotes.
+        Git gui в текущий момент (конец 2009 года) не поддерживает добавление
+        remote, поэтому должна быть использована коммандная строка. Щёлкните
+        правой кнопкой на папке хранилища и выберите <i>Git Bash Here</i>.
+        В строке введите следующую команду:</p>
 
         <pre>
 git remote add github git@github.com:nathanj/example.git
 </pre>
 
-        <p>Note: After adding a remote, close and reopen git gui for it to recognize
-        the new remote.</p>
+        <p>Примечание: После добавления remote, перезапустите git gui, что бы
+        он смог узнать новый remote.</p>
 
-        <p>Now the remote <span class="tt">github</span> is aliased to
-        the url <span
-            class="tt">git@github.com:nathanj/example.git</span>. When
-        viewing the push dialog in git gui, a convenient drop down list
-        of remotes is shown.</p>
+        <p>Теперь remote <span class="tt">github</span> ассоциировано с адресом
+        <span class="tt">git@github.com:nathanj/example.git</span>. Теперь, при
+        показе диалога публикации в git gui показывается выпадающий список
+        сохранённых remotes.</p>
 
         <p><img src="images/39.png" /></p>
 
